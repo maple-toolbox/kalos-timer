@@ -513,17 +513,20 @@ function checkWarningSystemFail() {
             document.getElementById("systemFailBox").style.border = '3px solid red';
             document.getElementById("systemFailBox").style.background = '#F9C3C3';
             document.getElementById("cleanseButton").style.background = '#F9C3C3';
+            document.getElementById("cleanseSlimeButton").style.background = '#F9C3C3';
         }
         else {
             document.getElementById("systemFailBox").style.border = '3px solid transparent';
             document.getElementById("systemFailBox").style.background = '#ccc';
             document.getElementById("cleanseButton").style.background = '#ccc';
+            document.getElementById("cleanseSlimeButton").style.background = '#ccc';
         }
     } else {
         document.getElementById("systemFailTimer").style.color = 'black';
         document.getElementById("systemFailBox").style.border = '3px solid transparent';
         document.getElementById("systemFailBox").style.background = '#ccc';
         document.getElementById("cleanseButton").style.background = '#ccc';
+        document.getElementById("cleanseSlimeButton").style.background = '#ccc';
     }
 }
 
