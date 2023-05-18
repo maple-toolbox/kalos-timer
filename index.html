@@ -1,4 +1,3 @@
-
 <link rel="stylesheet" type="text/css" href="styles.css">
 <script src="kalosTimer.js"></script>
 <div>
@@ -117,6 +116,17 @@
       </button>
     </div>
   </div>
+  <div class="item1" id="diveBox" onclick="diveTimer()">
+    <div class="counter" id="diveTimer">--</div>
+    <div>
+      <button class="button2" style="background-color:#ccc;">
+        <p>Dive</p>
+      </button>
+      <button class="button2" onclick="diveCancel(); event.stopPropagation()">
+        <p>Cancel</p>
+      </button>
+    </div>
+  </div>
   <div class="item1" id="bombBox" onclick="bombTimer()">
     <div class="counter" id="bombTimer">--</div>
     <div>
@@ -128,13 +138,13 @@
       </button>
     </div>
   </div>
-  <div class="item1" id="diveBox" onclick="diveTimer()">
-    <div class="counter" id="diveTimer">--</div>
+  <div class="item1" id="slimeBox" onclick="slimeTimer()">
+    <div class="counter" id="slimeTimer">--</div>
     <div>
       <button class="button2" style="background-color:#ccc;">
-        <p>Dive</p>
+        <p>Slime</p>
       </button>
-      <button class="button2" onclick="diveCancel(); event.stopPropagation()">
+      <button class="button2" onclick="slimeCancel(); event.stopPropagation()">
         <p>Cancel</p>
       </button>
     </div>

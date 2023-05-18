@@ -1,4 +1,5 @@
 const warningBomb = 3;
+const warningslime = 3;
 const warningBreath = 10;
 const warningDive = 5;
 const warningFMA = 20;
@@ -9,6 +10,7 @@ const maxPhase = 4;
 const minPhase = 1;
 const systemCooldown = 60;
 const bombCooldown = 10;
+const slimeCooldown = 15;
 const diveCooldown = 20;
 const fmaCooldown = 150;
 const groggyDuration = 20;
@@ -22,12 +24,14 @@ const bind15Sec = 15;
 var phase = minPhase;
 
 var bombCountdown;
+var slimeCountdown;
 var breathCountdown;
 var diveCountdown;
 var fmaCountdown;
 var systemFailCountdown;
 
 var bombSec;
+var slimeSec;
 var breathSec;
 var diveSec;
 var fmaSec = fmaCooldown;
@@ -110,6 +114,7 @@ function startPhase() {
     checkWarningBreath();
     checkWarningDive();
     checkWarningFMA();
+    checkWarningSlime();
     checkWarningNumSystems();
     checkWarningSystemFail();
     testIndicator();
@@ -332,7 +337,34 @@ function bombCancel(){
     clearInterval(bombCountdown);
 }
 
-
+function checkWarningslime() {
+    if (slimeSec <= warningslime) {
+        document.getElementById("slimeTimer").style.color = 'red';
+    }
+    else {
+        document.getElementById("slimeTimer").style.color = 'black';
+    }
+}
+function slimeTimer(){
+    slimeSec = slimeCooldown;
+    document.getElementById('slimeTimer').innerHTML = slimeSec;
+    checkWarningslime();
+    clearInterval(slimeCountdown);
+    slimeCountdown = setInterval(function(){
+        slimeSec--;
+        document.getElementById('slimeTimer').innerHTML = slimeSec;
+        checkWarningslime();
+        if (slimeSec <= 0) {
+            slimeSec = slimeCooldown;
+        }
+    }, 1000);
+}
+function slimeCancel(){
+    slimeSec = slimeCooldown;
+    document.getElementById('slimeTimer').innerHTML = "--";
+    checkWarningslime();
+    clearInterval(slimeCountdown);
+}
 
 
 
